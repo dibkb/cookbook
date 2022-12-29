@@ -6,7 +6,10 @@ import styles from "../styles/Navbar.module.scss";
 const links = ["Home", "Contact", "Menu", "About Us"];
 const LinksContent = () => {
   const router = useRouter();
-  const pathName = router.pathname.split("/")[1];
+  const pathName = router.pathname.split("/")[1]
+    ? router.pathname.split("/")[1]
+    : "home";
+
   const handleClick = (element: string) => {
     const URL = element.split(" ")[0].toLocaleLowerCase();
     router.push(URL === "home" ? "/" : URL);
@@ -15,6 +18,7 @@ const LinksContent = () => {
     <div className={styles["linkContent"]}>
       {links.map((element) => {
         let active = false;
+        console.log(router);
         if (element.split(" ")[0].toLocaleLowerCase() === pathName) {
           active = true;
         }
