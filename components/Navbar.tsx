@@ -1,9 +1,4 @@
-import React, {
-  AnchorHTMLAttributes,
-  DetailedHTMLProps,
-  MouseEvent,
-  MouseEventHandler,
-} from "react";
+import React from "react";
 import logo from "../public/assets/logo.png";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -11,6 +6,7 @@ import styles from "../styles/Navbar.module.scss";
 const links = ["Home", "Contact", "Menu", "About Us"];
 const LinksContent = () => {
   const router = useRouter();
+  const pathName = router.pathname.split("/")[1];
   const handleClick = (element: string) => {
     const URL = element.split(" ")[0].toLocaleLowerCase();
     router.push(URL === "home" ? "/" : URL);
@@ -18,10 +14,14 @@ const LinksContent = () => {
   return (
     <div className={styles["linkContent"]}>
       {links.map((element) => {
+        let active = false;
+        if (element.split(" ")[0].toLocaleLowerCase() === pathName) {
+          active = true;
+        }
         return (
           <a
             key={element}
-            className={styles.link}
+            className={active ? styles["link_active"] : styles["link"]}
             onClick={(e) => {
               e.preventDefault();
               handleClick(element);

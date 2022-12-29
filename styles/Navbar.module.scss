@@ -8,7 +8,8 @@
   gap: 4.5rem;
   margin: 0 auto;
 }
-.link {
+.link,
+.link_active {
   @include font;
   font-weight: 500;
   font-size: 1rem;
@@ -17,4 +18,7 @@
   &:hover {
     color: $colorOrange;
   }
+}
+.link_active {
+  color: $colorOrange;
 }
