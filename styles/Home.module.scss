@@ -1,6 +1,4 @@
+@import "basics";
 .container {
-  max-width: 1600px;
-  display: block;
-  margin: 0 auto;
-  border: 1px solid red;
+  @include container;
 }

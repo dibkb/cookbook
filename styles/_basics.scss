@@ -1,15 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
 // ---------------colors-----------------
-$green: #008037;
-$red: #ff1616;
-$yellow: #ffe600;
-$orange: #ff9500;
+$colorGreen: #008037;
+$colorRed: #ff1616;
+$colorYellow: #ffe600;
+$colorOrange: #ff9500;
+$dark: #575757;
 // ---------------mixins-----------------
 @mixin container {
   max-width: 1600px;
   display: block;
   margin: 0 auto;
   padding: 0 1rem;
+}
+@mixin font {
+  font-family: "Poppins", sans-serif;
 }
 @mixin fontBody {
   font-family: "Poppins", sans-serif;
