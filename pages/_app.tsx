@@ -1,5 +1,19 @@
 import type { AppProps } from "next/app";
+import { useEffect, useState } from "react";
 import "../styles/global.css";
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  const [showChild, setShowChild] = useState(false);
+  useEffect(() => {
+    setShowChild(true);
+  }, []);
+
+  if (!showChild) {
+    return null;
+  }
+
+  if (typeof window === "undefined") {
+    return <></>;
+  } else {
+    return <Component {...pageProps} />;
+  }
 }

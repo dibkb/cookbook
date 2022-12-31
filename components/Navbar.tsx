@@ -35,7 +35,6 @@ const LinksContent = () => {
           </a>
         );
       })}
-      ;
     </div>
   );
 };

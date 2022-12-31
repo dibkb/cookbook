@@ -1,9 +1,9 @@
 import Head from "next/head";
 import Image from "next/image";
-import { Inter } from "@next/font/google";
 import styles from "../styles/Home.module.scss";
 import Navbar from "../components/Navbar";
-
+import bodyImage from "../public/assets/hero.svg";
+import Message from "../components/Message";
 export default function Home() {
   return (
     <>
@@ -15,6 +15,23 @@ export default function Home() {
       </Head>
       <main className={styles.container}>
         <Navbar />
+        <body className={styles["hero"]}>
+          <section className={styles["text"]}>
+            <h3>
+              healthy <span className={styles["colorGreen"]}>Diet</span>
+            </h3>
+            <h3>
+              healthy <span className={styles["colorRed"]}>Body</span>
+            </h3>
+            <h3>
+              healthy <span className={styles["colorYellow"]}>Life</span>
+            </h3>
+          </section>
+          <section className={styles["image__container"]}>
+            <img src={bodyImage.src} alt="hero" />
+          </section>
+        </body>
+        <Message />
       </main>
     </>
   );

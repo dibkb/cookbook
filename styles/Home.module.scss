@@ -2,3 +2,31 @@
 .container {
   @include container;
 }
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.image {
+}
+.image__container {
+}
+.text {
+  @include fontHeading;
+  font-size: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  h3 {
+    color: $dark;
+  }
+  .colorGreen {
+    color: $colorGreen;
+  }
+  .colorRed {
+    color: $colorRed;
+  }
+  .colorYellow {
+    color: $colorYellow;
+  }
+}
